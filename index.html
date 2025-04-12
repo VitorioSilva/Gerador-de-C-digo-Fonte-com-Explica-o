@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Código-Fonte com Explicação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Gerador de Código-Fonte com Explicação</h1>
+  </header>
+  <main>
+    <label for="linguagem">Escolha a linguagem:</label>
+    <select id="linguagem">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="javascript">JavaScript</option>
+      <option value="python">Python</option>
+      <option value="c">C</option>
+    </select>
+
+    <label for="descricao">Descreva o que você deseja gerar:</label>
+    <textarea id="descricao" rows="5" placeholder="Exemplo: Criar um botão que exibe uma mensagem ao ser clicado"></textarea>
+
+    <button onclick="gerarCodigo()">Gerar Código com Explicação</button>
+
+    <h2>Código Gerado</h2>
+    <pre id="codigo"></pre>
+
+    <h2>Explicação</h2>
+    <div class="explicacao" id="explicacao"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -10,26 +10,52 @@
   <header>
     <h1>Gerador de Código-Fonte com Explicação</h1>
   </header>
-  <main>
-    <label for="linguagem">Escolha a linguagem:</label>
-    <select id="linguagem">
-    
-      <option value="javascript">JavaScript</option>
-      <option value="python">Python</option>
-      <option value="c">C</option>
-    </select>
 
-    <label for="descricao">Descreva o que você deseja gerar:</label>
-    <textarea id="descricao" rows="5" placeholder="Exemplo: Criar um botão que exibe uma mensagem ao ser clicado"></textarea>
+  <main id="main-container">
+    <!-- Tela de Login -->
+    <div id="login-screen" class="screen">
+      <label for="email-login">E-mail:</label>
+      <input type="email" id="email-login" placeholder="Digite seu e-mail">
+      <label for="senha-login">Senha:</label>
+      <input type="password" id="senha-login" placeholder="Digite sua senha">
+      <button onclick="login()">Login</button>
+      <p>Não tem uma conta? <a href="javascript:void(0);" onclick="mostrarCriarConta()">Criar conta</a></p>
+    </div>
 
-    <button onclick="gerarCodigo()">Gerar Código com Explicação</button>
+    <!-- Tela de Criar Conta -->
+    <div id="create-account-screen" class="screen" style="display: none;">
+      <label for="email-create">E-mail:</label>
+      <input type="email" id="email-create" placeholder="Digite seu e-mail">
+      <label for="senha-create">Senha:</label>
+      <input type="password" id="senha-create" placeholder="Digite sua senha">
+      <label for="confirm-senha">Confirmar Senha:</label>
+      <input type="password" id="confirm-senha" placeholder="Confirme sua senha">
+      <button onclick="criarConta()">Criar Conta</button>
+      <p>Já tem uma conta? <a href="javascript:void(0);" onclick="mostrarLogin()">Fazer login</a></p>
+    </div>
 
-    <h2>Código Gerado</h2>
-    <pre id="codigo"></pre>
+    <!-- Gerador de Código (após login) -->
+    <div id="gerador-codigo-screen" class="screen" style="display: none;">
+      <label for="linguagem">Escolha a linguagem:</label>
+      <select id="linguagem">
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="c">C</option>
+      </select>
 
-    <h2>Explicação</h2>
-    <div class="explicacao" id="explicacao"></div>
+      <label for="descricao">Descreva o que você deseja gerar:</label>
+      <textarea id="descricao" rows="5" placeholder="Exemplo: Criar um botão que exibe uma mensagem ao ser clicado"></textarea>
+
+      <button onclick="gerarCodigo()">Gerar Código com Explicação</button>
+
+      <h2>Código Gerado</h2>
+      <pre id="codigo"></pre>
+
+      <h2>Explicação</h2>
+      <div class="explicacao" id="explicacao"></div>
+    </div>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
